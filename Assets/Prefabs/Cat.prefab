@@ -552,7 +552,7 @@ GameObject:
   - component: {fileID: 386974026}
   m_Layer: 0
   m_Name: Cat
-  m_TagString: Untagged
+  m_TagString: Character
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -589,6 +589,7 @@ MonoBehaviour:
   IsMovementActive: 1
   movementSpeed: 1
   CarinhoSlider: {fileID: 984232707}
+  MaxCarinhoValue: 3
 --- !u!61 &386974026
 BoxCollider2D:
   m_ObjectHideFlags: 0
