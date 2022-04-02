@@ -19,4 +19,9 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
         GameOverPanel.SetActive(true);
     }
+
+    public void PlayAgain()
+    {
+
+    }
 }

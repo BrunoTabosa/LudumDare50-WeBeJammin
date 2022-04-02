@@ -14,7 +14,6 @@ public class Box : MonoBehaviour
         boxManager = bm;
         gameManager = gm;
         CanInTheBox.SetActive(false);
-
     }
 
     public void OnTriggerEnter2D(Collider2D collision)

@@ -591,6 +591,7 @@ MonoBehaviour:
   movementSpeed: 1
   CarinhoSlider: {fileID: 984232707}
   MaxCarinhoValue: 5
+  renderer: {fileID: 4067977041603239872}
 --- !u!61 &386974026
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -733,7 +734,7 @@ GameObject:
   - component: {fileID: 4221939721314782376}
   - component: {fileID: 4067977041603239872}
   m_Layer: 0
-  m_Name: Circle
+  m_Name: CatFace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

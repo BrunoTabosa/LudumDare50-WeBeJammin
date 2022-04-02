@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 31f18c891f27222478ac6280940a4d31, type: 3}
-  m_Name: BaseCharacter
+  m_Name: BaseCharacter 1
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300000, guid: 0df727248ed3ae54e80c05a65438bd69, type: 3}
-  color: {r: 1, g: 1, b: 1, a: 1}
-  CarinhoRequired: 3
-  DelayAfterCarinho: 2
-  MovementSpeed: 1
+  color: {r: 0.3915094, g: 0.66155535, b: 1, a: 1}
+  CarinhoRequired: 3.5
+  DelayAfterCarinho: 2.2
+  MovementSpeed: 0.7
