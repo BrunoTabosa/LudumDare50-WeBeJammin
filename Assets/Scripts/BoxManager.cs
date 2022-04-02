@@ -10,6 +10,9 @@ public class BoxManager : MonoBehaviour
 
     private GameManager gameManager;
 
+    private int boxesAmount = 0;
+    private int boxesOccupied = 0;
+
     public void Setup(GameManager gm)
     {
         boxes = new List<Box>();
@@ -27,8 +30,21 @@ public class BoxManager : MonoBehaviour
     }
     public void SpawnBox(int i)
     {
-        var go = Instantiate(boxPrefab, boxPosition[i].position, 
+        var go = Instantiate<Box>(boxPrefab, boxPosition[i].position, 
             Quaternion.identity, transform);
+        go.Setup(this, gameManager);
+        boxes.Add(go);
+    }
+
+    public void OnCharacterEnterBox(Box box, Character character)
+    {
+        boxesOccupied++;
+
+        if(boxesOccupied >= boxes.Count)
+        {
+            //Game over
+            gameManager.OnGameOver();
+        }
     }
 
 
