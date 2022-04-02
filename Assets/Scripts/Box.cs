@@ -19,7 +19,7 @@ public class Box : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Character")
+        if (collision.tag == "Enemy")
         {
             // "Tell managers about that" -Karen
             boxManager.OnCharacterEnterBox(this, collision.GetComponent<Character>());
