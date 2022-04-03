@@ -34,7 +34,7 @@ public class WaveSpawner : MonoBehaviour
         {
             Debug.LogError("No spawn points references.");
         }
-
+        state = SpawnState.COUNTING;
         waveCountdown = timeBetweenWaves;
     }
 
@@ -126,9 +126,9 @@ public class WaveSpawner : MonoBehaviour
         Debug.Log("Spawning enemy: " + _enemy.name);
 
         Transform _sp = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        
+        Vector3 newPos = new Vector3(_sp.position.x + Random.Range(-3, 4), _sp.position.y + Random.Range(-3, 4), 0);
 
-        Character cat = Instantiate(_enemy, _sp.position, _sp.rotation).GetComponent<Character>();
+        Character cat = Instantiate(_enemy, newPos, _sp.rotation).GetComponent<Character>();
         cat.Setup(gameManager, stats);
     }
 }
