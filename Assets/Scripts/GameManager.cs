@@ -7,12 +7,20 @@ public class GameManager : MonoBehaviour
 {
     public BoxManager boxManager;
 
+    public int boxToSpawn;
+
     [Header("UI Screens")]
     public GameObject GameOverPanel;
 
     public void Awake()
     {
-        boxManager.Setup(this);   
+        boxManager.Setup(this);
+        boxManager.SpawnMultipleBoxes(boxToSpawn);
+    }
+
+    public void Start()
+    {
+
     }
 
     public void OnGameOver()

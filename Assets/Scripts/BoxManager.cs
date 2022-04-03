@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,9 +20,18 @@ public class BoxManager : MonoBehaviour
         gameManager = gm;
     }
 
+    public void SpawnMultipleBoxes(int boxToSpawn)
+    {
+        for (int i = 0; i < boxToSpawn; i++)
+        {
+            if (i >= boxPosition.Count) break;
+            SpawnBox(i);
+        }
+    }
+
     private void Start()
     {
-        SpawnBox();
+
     }
 
     public void SpawnBox()
@@ -30,7 +40,7 @@ public class BoxManager : MonoBehaviour
     }
     public void SpawnBox(int i)
     {
-        var go = Instantiate<Box>(boxPrefab, boxPosition[i].position, 
+        var go = Instantiate<Box>(boxPrefab, boxPosition[i].position,
             Quaternion.identity, transform);
         go.Setup(this, gameManager);
         boxes.Add(go);
@@ -40,7 +50,7 @@ public class BoxManager : MonoBehaviour
     {
         boxesOccupied++;
 
-        if(boxesOccupied >= boxes.Count)
+        if (boxesOccupied >= boxes.Count)
         {
             //Game over
             gameManager.OnGameOver();

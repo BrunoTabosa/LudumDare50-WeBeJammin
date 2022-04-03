@@ -5,6 +5,7 @@ using UnityEngine;
 public class Box : MonoBehaviour
 {
     public GameObject CanInTheBox;
+    public Collider2D collider;
 
     public SpriteRenderer spriteRenderer;
     public List<Sprite> sprites;
@@ -32,6 +33,7 @@ public class Box : MonoBehaviour
             spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
             spriteRenderer.color = c.renderer.color;
 
+            collider.enabled = false;
             Destroy(collision.gameObject);
         }
     }

@@ -262,6 +262,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CanInTheBox: {fileID: 1518689747}
+  collider: {fileID: 1537998542}
   spriteRenderer: {fileID: 1518689749}
   sprites:
   - {fileID: 4907172668298750578, guid: a2bdfb439d78ae940a8a32174df3a1f6, type: 3}
