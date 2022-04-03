@@ -427,6 +427,17 @@ MonoBehaviour:
   movementSpeed: 1
   CarinhoSlider: {fileID: 984232707}
   meows:
+  - {fileID: 8300000, guid: a2febc6ef0db3784cbea4a092a0f3dbd, type: 3}
+  - {fileID: 8300000, guid: cf571087a3b59bd469f476c6d8fcd916, type: 3}
+  - {fileID: 8300000, guid: 6b75017f9ae25814981c171fa62ed5db, type: 3}
+  - {fileID: 8300000, guid: f1e3e2e02eeb5dc42a28bf4bd40d2cb6, type: 3}
+  - {fileID: 8300000, guid: 8a1ee74e06406cf4d8f61baaafff841a, type: 3}
+  - {fileID: 8300000, guid: 689763f762b732d4dabb6360f49c3cf3, type: 3}
+  - {fileID: 8300000, guid: d2ca62cb2205d714097fa118cb87d142, type: 3}
+  - {fileID: 8300000, guid: b14b12b4645f68a4aa1871ce3ca1581c, type: 3}
+  - {fileID: 8300000, guid: 8a4b474b283f8c74ba5dbb6a6d41bcf8, type: 3}
+  - {fileID: 8300000, guid: c65895836583b8c449e56e3f45756d95, type: 3}
+  - {fileID: 8300000, guid: 8b626b2852267dc479f69633899742ea, type: 3}
   - {fileID: 8300000, guid: 951f246aac329144e9dd68c6a9dc01e3, type: 3}
   - {fileID: 8300000, guid: 897b92551173c2c40893be8d08d33116, type: 3}
   MaxCarinhoValue: 5
@@ -487,7 +498,7 @@ AudioSource:
   m_GameObject: {fileID: 1664249389618575912}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 1ce501ae5e7e3c241a54367d687d3ce6, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
