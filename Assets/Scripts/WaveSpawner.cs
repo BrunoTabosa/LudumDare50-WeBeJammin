@@ -129,6 +129,10 @@ public class WaveSpawner : MonoBehaviour
         Vector3 newPos = new Vector3(_sp.position.x + Random.Range(-3, 4), _sp.position.y + Random.Range(-3, 4), 0);
 
         Character cat = Instantiate(_enemy, newPos, _sp.rotation).GetComponent<Character>();
+        if(newPos.x >= 0)
+        {
+            cat.InvertSprite();
+        }
         cat.Setup(gameManager, stats);
     }
 }
