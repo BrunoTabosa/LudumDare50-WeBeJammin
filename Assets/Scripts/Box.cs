@@ -6,6 +6,9 @@ public class Box : MonoBehaviour
 {
     public GameObject CanInTheBox;
 
+    public SpriteRenderer spriteRenderer;
+    public List<Sprite> sprites;
+
     private BoxManager boxManager;
     private GameManager gameManager;
 
@@ -20,11 +23,15 @@ public class Box : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
+            Character c = collision.GetComponent<Character>();
             // "Tell managers about that" -Karen
-            boxManager.OnCharacterEnterBox(this, collision.GetComponent<Character>());
+            boxManager.OnCharacterEnterBox(this, c);
 
             //Cat entering in the box
             CanInTheBox.SetActive(true);
+            spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
+            spriteRenderer.color = c.renderer.color;
+
             Destroy(collision.gameObject);
         }
     }
