@@ -7,6 +7,7 @@ using UnityEngine;
 public class CharacterStatsSO : ScriptableObject
 {
     public Sprite sprite;
+    public Color color;
 
     public float CarinhoRequired;
     public float DelayAfterCarinho;

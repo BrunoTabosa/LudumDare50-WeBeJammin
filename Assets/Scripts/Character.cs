@@ -19,6 +19,7 @@ public class Character : MonoBehaviour
     private float currentCarinhoValue = 0f;
 
     private float currentStopTimer = 0f;
+    public SpriteRenderer renderer;
     
 
     public void Start()
@@ -28,11 +29,17 @@ public class Character : MonoBehaviour
     }
 
 
-    public void Setup(GameManager gm)
+    public void Setup(GameManager gm, CharacterStatsSO stats)
     {
         gameManager = gm;
         SetTarget(Vector2.zero);
         IsMovementActive = true;
+
+        renderer.sprite = stats.sprite;
+        renderer.color = stats.color;
+        MaxCarinhoValue = stats.CarinhoRequired;
+        currentStopTimer = stats.DelayAfterCarinho;
+        movementSpeed = stats.MovementSpeed;
     }
 
     public void SetTarget(Vector2 newTarget)
