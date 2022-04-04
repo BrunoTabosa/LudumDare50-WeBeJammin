@@ -57,6 +57,25 @@ public class BoxManager : MonoBehaviour
         }
     }
 
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Enemy")
+        {
+            Character c = collision.GetComponent<Character>();
+            // "Tell managers about that" -Karen
+            var box = boxes[boxesOccupied];
+            
+
+            //Cat entering in the box
+            box.CanInTheBox.SetActive(true);
+            box.CatSpriteRenderer.sprite = box.CatSprites[UnityEngine.Random.Range(0, box.CatSprites.Count)];
+            box.CatSpriteRenderer.color = c.renderer.color;
+
+            OnCharacterEnterBox(box, c);
+            Destroy(collision.gameObject);
+        }
+    }
+
 
 
 }
