@@ -11,10 +11,12 @@ public class Character : MonoBehaviour
     public float movementSpeed;
     public Slider CarinhoSlider;
 
+    public List<AudioClip> meows;
 
     private Vector2 target;
     private GameManager gameManager;
     private Animator animator;
+    private AudioSource audioSource;
 
 
     public float MaxCarinhoValue = 5f;
@@ -27,6 +29,7 @@ public class Character : MonoBehaviour
     private void Awake()
     {
         animator = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Start()
@@ -84,6 +87,7 @@ public class Character : MonoBehaviour
     {
         IsMovementActive = false;
         animator.SetBool("IsWalking", IsMovementActive);
+        PlayRandomMeow();
     }
 
     private void OnMouseDrag()
@@ -111,5 +115,12 @@ public class Character : MonoBehaviour
     internal void InvertSprite()
     {
         renderer.gameObject.transform.localScale = (new Vector3(-renderer.gameObject.transform.localScale.x, 1, 1));
+    }
+
+    void PlayRandomMeow()
+    {
+        var ac = meows[UnityEngine.Random.Range(0, meows.Count)];
+        audioSource.PlayOneShot(ac);
+
     }
 }
