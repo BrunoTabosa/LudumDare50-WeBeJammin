@@ -6,12 +6,13 @@ public class CursorManager : MonoBehaviour
 {
 
     [SerializeField] private List<CursorAnimation> cursorAnimationList;
+    [SerializeField] private int frameCount;
 
     private CursorAnimation cursorAnimation;
+    public bool IsCursorAnimationActive = false;
 
     private int currentFrame;
     private float frameTimer;
-    private int frameCount;
 
     public enum CursorType
     {
@@ -27,7 +28,7 @@ public class CursorManager : MonoBehaviour
     private void Update()
     {
         frameTimer -= Time.deltaTime;
-        if (frameTimer <= 0f)
+        if (frameTimer <= 0f && IsCursorAnimationActive)
         {
             frameTimer += cursorAnimation.frameRate;
             currentFrame = (currentFrame + 1) % frameCount;
@@ -41,6 +42,7 @@ public class CursorManager : MonoBehaviour
         currentFrame = 0;
         frameTimer = cursorAnimation.frameRate;
         frameCount = cursorAnimation.textureArray.Length;
+        Cursor.SetCursor(cursorAnimation.textureArray[currentFrame], cursorAnimation.offset, CursorMode.Auto);
     }
 
     [System.Serializable]

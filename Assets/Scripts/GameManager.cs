@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public BoxManager boxManager;
+    public CursorManager cursorManager;
 
     public int boxToSpawn;
 
@@ -33,5 +34,10 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         SceneManager.LoadScene("Gameplay", LoadSceneMode.Single);
+    }
+
+    public void SetCursorAnimation(bool value)
+    {
+        cursorManager.IsCursorAnimationActive = value;
     }
 }

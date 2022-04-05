@@ -88,6 +88,7 @@ public class Character : MonoBehaviour
         IsMovementActive = false;
         animator.SetBool("IsWalking", IsMovementActive);
         PlayRandomMeow();
+        gameManager.SetCursorAnimation(true);
     }
 
     private void OnMouseDrag()
@@ -98,6 +99,7 @@ public class Character : MonoBehaviour
 
         if (currentCarinhoValue >= MaxCarinhoValue)
         {
+            gameManager.SetCursorAnimation(false);
             Destroy(this.gameObject);
         }
     }
@@ -110,6 +112,7 @@ public class Character : MonoBehaviour
     void OnPatEnd()
     {
         currentStopTimer = 2f;
+        gameManager.SetCursorAnimation(false);
     }
 
     internal void InvertSprite()
