@@ -7,36 +7,25 @@ public class Box : MonoBehaviour
     public GameObject CanInTheBox;
     public Collider2D collider;
 
-    public SpriteRenderer spriteRenderer;
-    public List<Sprite> sprites;
+    public SpriteRenderer CatSpriteRenderer;
+    public List<Sprite> CatSprites;
 
     private BoxManager boxManager;
     private GameManager gameManager;
+
+    public List<Sprite> BoxSprites;
+    public SpriteRenderer BoxSpriteRenderer;
 
     public void Setup(BoxManager bm, GameManager gm)
     {
         boxManager = bm;
         gameManager = gm;
         CanInTheBox.SetActive(false);
+        BoxSpriteRenderer.sprite = BoxSprites[Random.Range(0, BoxSprites.Count)];
+
     }
 
-    public void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Enemy")
-        {
-            Character c = collision.GetComponent<Character>();
-            // "Tell managers about that" -Karen
-            boxManager.OnCharacterEnterBox(this, c);
-
-            //Cat entering in the box
-            CanInTheBox.SetActive(true);
-            spriteRenderer.sprite = sprites[Random.Range(0, sprites.Count)];
-            spriteRenderer.color = c.renderer.color;
-
-            collider.enabled = false;
-            Destroy(collision.gameObject);
-        }
-    }
+    
 
 
 }
